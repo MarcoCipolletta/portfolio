@@ -19,7 +19,16 @@
       <ng-icon name="iconoirMenu" class="text-2xl cursor-pointer"></ng-icon>
     </button>
   </div>
-  <nav class="hidden md:flex"></nav>
+  <nav class="hidden md:flex justify-center items-center">
+    <ul class="flex space-x-4">
+      <ng-container *ngTemplateOutlet="navLinks"></ng-container>
+    </ul>
+  </nav>
+  <div class="hidden md:flex justify-center items-center">
+    <ul class="flex space-x-4">
+      <ng-container *ngTemplateOutlet="utils"></ng-container>
+    </ul>
+  </div>
 </header>
 <app-sidebar [open]="open">
   <ng-container nav-link *ngTemplateOutlet="navLinks"></ng-container>
@@ -29,9 +38,9 @@
 <ng-template #navLinks>
   <li>
     <a
-      class="hover:text-accent transition-all duration-300"
+      class="hover:text-seaGreen transition-all duration-300"
       routerLink="/"
-      routerLinkActive="text-accent"
+      routerLinkActive="text-seaGreen"
       [routerLinkActiveOptions]="{ exact: true }"
       (click)="open = false"
       >Home</a
@@ -39,18 +48,18 @@
   </li>
   <li>
     <a
-      class="hover:text-accent transition-all duration-300"
+      class="hover:text-seaGreen transition-all duration-300"
       routerLink="/about"
-      routerLinkActive="text-accent"
+      routerLinkActive="text-seaGreen"
       (click)="open = false"
       >About</a
     >
   </li>
   <li>
     <a
-      class="hover:text-accent transition-all duration-300"
+      class="hover:text-seaGreen transition-all duration-300"
       routerLink="/contact"
-      routerLinkActive="text-accent"
+      routerLinkActive="text-seaGreen"
       (click)="open = false"
       >Contact</a
     >
@@ -78,6 +87,8 @@
     </button>
   </div>
   <div class="w-full flex justify-center items-center">
-    <button>it</button><span>&nbsp;/&nbsp;</span><button>en</button>
+    <button class="cursor-pointer">it</button>
+    <span>&nbsp;/&nbsp;</span>
+    <button class="cursor-pointer">en</button>
   </div>
 </ng-template>
