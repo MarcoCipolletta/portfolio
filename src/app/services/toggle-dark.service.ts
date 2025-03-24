@@ -8,18 +8,16 @@ export class ToggleDarkService {
   private theme: 'light' | 'dark' = 'light';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    if (isPlatformBrowser(this.platformId)) {
-      console.log(platformId);
-
-      const storage = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches;
-
-      this.theme =
-        storage === 'dark' || (!storage && prefersDark) ? 'dark' : 'light';
-      this.applyTheme();
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+    //   console.log(platformId);
+    //   const storage = localStorage.getItem('theme');
+    //   const prefersDark = window.matchMedia(
+    //     '(prefers-color-scheme: dark)'
+    //   ).matches;
+    //   this.theme =
+    //     storage === 'dark' || (!storage && prefersDark) ? 'dark' : 'light';
+    //   this.applyTheme();
+    // }
   }
 
   toggleTheme() {

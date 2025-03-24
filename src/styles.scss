@@ -1,22 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rock+Salt&display=swap");
 @import "tailwindcss";
 
 :root {
   --seaGreen: #09814a;
-  --richBlack: #000113;
-  --almond: #f5dfc7;
+  --accent: #06b767;
+  --richBlack: #070418;
+  --almond: #dbdbed;
   --montserrat: "Montserrat", sans-serif;
   --roboto: "Roboto Flex", sans-serif;
+  --robotoMono: "Roboto Mono", monospace;
+  --rockSalt: "Rock Salt", cursive;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-seaGreen: var(--seaGreen);
+  --color-accent: var(--accent);
   --color-richBlack: var(--richBlack);
   --color-almond: var(--almond);
   --font-montserrat: var(--montserrat);
   --font-roboto: var(--roboto);
+  --font-robotoMono: var(--robotoMono);
+  --font-rockSalt: var(--rockSalt);
+
+  --shadow-basic: 2px 2px 5px;
+  --inset-shadow-hover: inset 0px 0px 10px;
 }
 
 .test {
@@ -25,6 +35,6 @@
 
 @layer base {
   body {
-    @apply bg-almond dark:bg-richBlack;
+    @apply bg-almond dark:bg-richBlack text-richBlack dark:text-almond;
   }
 }
