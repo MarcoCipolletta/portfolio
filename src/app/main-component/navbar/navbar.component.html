@@ -8,10 +8,76 @@
   </div>
   <div class="md:hidden">
     <button
-      class="flex justify-center items-center border rounded-sm py-1 px-3 shadow-basic shadow-richBlack/25 dark:shadow-almond/25 inset-shadow-2xs inset-shadow-seaGreen/0 hover:inset-shadow-hover hover:inset-shadow-seaGreen transition-all duration-300"
+      class="relative z-50 flex justify-center items-center border rounded-sm py-1 px-3 shadow-basic inset-shadow-2xs inset-shadow-seaGreen/0 hover:inset-shadow-hover hover:inset-shadow-seaGreen transition-all duration-300"
+      [ngClass]="{
+        'border-almond text-almond dark:border-richBlack dark:text-richBlack dark:shadow-richBlack/25 shadow-almond/25':
+          open,
+        'shadow-richBlack/25 dark:shadow-almond/25': !open
+      }"
+      (click)="toggleSidebar()"
     >
       <ng-icon name="iconoirMenu" class="text-2xl cursor-pointer"></ng-icon>
     </button>
   </div>
+  <nav class="hidden md:flex"></nav>
 </header>
-<nav></nav>
+<app-sidebar [open]="open">
+  <ng-container nav-link *ngTemplateOutlet="navLinks"></ng-container>
+  <ng-container utils *ngTemplateOutlet="utils"></ng-container>
+</app-sidebar>
+
+<ng-template #navLinks>
+  <li>
+    <a
+      class="hover:text-accent transition-all duration-300"
+      routerLink="/"
+      routerLinkActive="text-accent"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="open = false"
+      >Home</a
+    >
+  </li>
+  <li>
+    <a
+      class="hover:text-accent transition-all duration-300"
+      routerLink="/about"
+      routerLinkActive="text-accent"
+      (click)="open = false"
+      >About</a
+    >
+  </li>
+  <li>
+    <a
+      class="hover:text-accent transition-all duration-300"
+      routerLink="/contact"
+      routerLinkActive="text-accent"
+      (click)="open = false"
+      >Contact</a
+    >
+  </li>
+</ng-template>
+
+<ng-template #utils>
+  <div class="w-full flex justify-center items-center">
+    <button
+      class="group flex max-w-[2.25rem] border rounded-lg h-9 w-9 items-center justify-center cursor-pointer"
+      (click)="toggleTheme()"
+    >
+      <span class="justify-center items-center dark:flex hidden">
+        <ng-icon
+          name="iconoirSunLight"
+          class="relative w-5 h-5 duration-300 group-hover:rotate-180"
+        ></ng-icon>
+      </span>
+      <span class="flex justify-center items-center dark:hidden">
+        <ng-icon
+          name="iconoirHalfMoon"
+          class="relative w-4 h-4 duration-500 group-hover:rotate-[360deg]"
+        ></ng-icon>
+      </span>
+    </button>
+  </div>
+  <div class="w-full flex justify-center items-center">
+    <button>it</button><span>&nbsp;/&nbsp;</span><button>en</button>
+  </div>
+</ng-template>

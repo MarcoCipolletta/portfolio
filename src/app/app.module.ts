@@ -7,14 +7,19 @@ import { NgIconsModule } from '@ng-icons/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './main-component/navbar/navbar.component';
-import { iconoirMenu } from '@ng-icons/iconoir';
+import {
+  iconoirMenu,
+  iconoirSunLight,
+  iconoirHalfMoon,
+} from '@ng-icons/iconoir';
+import { SidebarComponent } from './main-component/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgIconsModule.withIcons({ iconoirMenu }),
+    NgIconsModule.withIcons({ iconoirMenu, iconoirSunLight, iconoirHalfMoon }),
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
