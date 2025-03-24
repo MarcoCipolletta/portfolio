@@ -13,6 +13,9 @@ import {
   iconoirHalfMoon,
 } from '@ng-icons/iconoir';
 import { SidebarComponent } from './main-component/sidebar/sidebar.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpLoaderFactory } from './services/translate/HttpLoaderFactory';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SidebarComponent],
@@ -20,8 +23,16 @@ import { SidebarComponent } from './main-component/sidebar/sidebar.component';
     BrowserModule,
     AppRoutingModule,
     NgIconsModule.withIcons({ iconoirMenu, iconoirSunLight, iconoirHalfMoon }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'it', // Imposta la lingua di default
+    }),
   ],
-  providers: [provideClientHydration()],
+  providers: [provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

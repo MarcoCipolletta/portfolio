@@ -43,7 +43,7 @@
       routerLinkActive="text-seaGreen"
       [routerLinkActiveOptions]="{ exact: true }"
       (click)="open = false"
-      >Home</a
+      >{{ "nav.home" | translate | uppercase }}</a
     >
   </li>
   <li>
@@ -52,7 +52,7 @@
       routerLink="/about"
       routerLinkActive="text-seaGreen"
       (click)="open = false"
-      >About</a
+      >{{ "nav.about" | translate | uppercase }}</a
     >
   </li>
   <li>
@@ -61,7 +61,7 @@
       routerLink="/contact"
       routerLinkActive="text-seaGreen"
       (click)="open = false"
-      >Contact</a
+      >{{ "nav.contacts" | translate | uppercase }}</a
     >
   </li>
 </ng-template>
@@ -87,8 +87,20 @@
     </button>
   </div>
   <div class="w-full flex justify-center items-center">
-    <button class="cursor-pointer">it</button>
+    <button
+      class="cursor-pointer"
+      [ngClass]="{ 'text-seaGreen': lang === 'it' }"
+      (click)="setLang('it')"
+    >
+      it
+    </button>
     <span>&nbsp;/&nbsp;</span>
-    <button class="cursor-pointer">en</button>
+    <button
+      class="cursor-pointer"
+      [ngClass]="{ 'text-seaGreen': lang === 'en' }"
+      (click)="setLang('en')"
+    >
+      en
+    </button>
   </div>
 </ng-template>
