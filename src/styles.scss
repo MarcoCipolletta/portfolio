@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 @import "tailwindcss";
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
 
 :root {
-  --seaGrenn: #09814a;
+  --seaGreen: #09814a;
   --richBlack: #000113;
   --almond: #f5dfc7;
   --montserrat: "Montserrat", sans-serif;
@@ -14,7 +12,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-seaGrenn: var(--seaGrenn);
+  --color-seaGreen: var(--seaGreen);
   --color-richBlack: var(--richBlack);
   --color-almond: var(--almond);
   --font-montserrat: var(--montserrat);
@@ -23,4 +21,10 @@
 
 .test {
   @apply text-red-500 font-bold;
+}
+
+@layer base {
+  body {
+    @apply bg-almond dark:bg-richBlack;
+  }
 }

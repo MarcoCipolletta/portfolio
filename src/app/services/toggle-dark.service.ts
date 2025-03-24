@@ -9,6 +9,8 @@ export class ToggleDarkService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
+      console.log(platformId);
+
       const storage = localStorage.getItem('theme');
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)'
