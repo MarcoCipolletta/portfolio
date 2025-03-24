@@ -9,6 +9,8 @@
   --roboto: "Roboto Flex", sans-serif;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-seaGrenn: var(--seaGrenn);
   --color-richBlack: var(--richBlack);
