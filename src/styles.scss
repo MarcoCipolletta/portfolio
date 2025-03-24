@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+@import "tailwindcss";
+
+:root {
+  --seaGrenn: #09814a;
+  --richBlack: #000113;
+  --almond: #f5dfc7;
+  --montserrat: "Montserrat", sans-serif;
+  --roboto: "Roboto Flex", sans-serif;
+}
+
+@theme {
+  --color-seaGrenn: var(--seaGrenn);
+  --color-richBlack: var(--richBlack);
+  --color-almond: var(--almond);
+  --font-montserrat: var(--montserrat);
+  --font-roboto: var(--roboto);
+}
