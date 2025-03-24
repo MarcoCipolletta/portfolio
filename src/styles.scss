@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
 :root {
   --seaGrenn: #09814a;
@@ -17,4 +19,8 @@
   --color-almond: var(--almond);
   --font-montserrat: var(--montserrat);
   --font-roboto: var(--roboto);
+}
+
+.test {
+  @apply text-red-500 font-bold;
 }

@@ -1,41 +1,40 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ToggleDarkService {
-  constructor() {
-    const themeSaved = localStorage.getItem('theme');
+  private theme: 'light' | 'dark' = 'light';
 
-    if (
-      (themeSaved && themeSaved === 'dark') ||
-      (!themeSaved && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      this.theme = 'dark';
-      this.setTheme();
-    } else {
-      this.theme = 'light';
-      this.setTheme();
-    }
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      const storage = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
 
-  theme: string;
-  setTheme() {
-    if (this.theme === 'dark') {
-      window.document.body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      window.document.body.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      this.theme =
+        storage === 'dark' || (!storage && prefersDark) ? 'dark' : 'light';
+      this.applyTheme();
     }
   }
 
   toggleTheme() {
+    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    this.applyTheme();
+  }
+
+  private applyTheme() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const body = document.body;
     if (this.theme === 'dark') {
-      this.theme = 'light';
+      body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
-      this.theme = 'dark';
+      body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-    this.setTheme();
   }
 }
