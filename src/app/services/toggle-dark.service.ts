@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { BrowserService } from './borwser.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +8,8 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 export class ToggleDarkService {
   private theme: 'light' | 'dark' = 'light';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    if (isPlatformBrowser(this.platformId)) {
-      console.log(platformId);
+  constructor(private browser: BrowserService) {
+    if (this.browser.isBrowser()) {
       const storage = localStorage.getItem('theme');
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)'
@@ -26,7 +26,7 @@ export class ToggleDarkService {
   }
 
   private applyTheme() {
-    if (!isPlatformBrowser(this.platformId)) return;
+    if (!this.browser.isBrowser()) return;
 
     const body = document.body;
     if (this.theme === 'dark') {
