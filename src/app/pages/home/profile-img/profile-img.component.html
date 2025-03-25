@@ -1,0 +1,38 @@
+<div class="relative w-full">
+  <!-- Bordo rotante in SVG -->
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute w-[100%]"
+    viewBox="0 0 506 506"
+  >
+    <circle
+      cx="253"
+      cy="253"
+      r="250"
+      stroke="#09814a"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="transparent"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        values="0 253 253; 360 253 253; 0 253 253"
+        dur="20s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="stroke-dasharray"
+        values="90 100 95 90 ; 45 95 93 102 ;90 100 95 90 "
+        dur="20s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </svg>
+
+  <!-- Contenitore fermo per l'immagine -->
+
+  <img src="cipo.png" alt="" class="object-cover w-full h-full" />
+</div>
