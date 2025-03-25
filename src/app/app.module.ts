@@ -13,6 +13,8 @@ import {
   iconoirHalfMoon,
   iconoirDownload,
   iconoirXmark,
+  iconoirLinkedin,
+  iconoirGithub,
 } from '@ng-icons/iconoir';
 import { SidebarComponent } from './main-component/sidebar/sidebar.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -30,6 +32,8 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
       iconoirHalfMoon,
       iconoirDownload,
       iconoirXmark,
+      iconoirLinkedin,
+      iconoirGithub,
     }),
     TranslateModule.forRoot({
       loader: {
