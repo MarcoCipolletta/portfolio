@@ -1,6 +1,7 @@
 <div
   class="bg-black/0 w-0 top-0 right-0 bottom-0 absolute z-10 transition-all duration-700 ease-in-out overflow-hidden md:hidden"
   [ngClass]="{ 'w-full bg-black/50': open }"
+  (click)="close()"
 >
   <div
     class="absolute z-10 right-0 top-0 bottom-0 bg-richBlack dark:bg-almond text-almond dark:text-richBlack transition-all duration-700 ease-in-out inset-shadow-sidebar dark:inset-shadow-richBlack/50 inset-shadow-almond/50"
@@ -8,7 +9,24 @@
       'w-30 ': open,
       ' w-0': !open
     }"
+    (click)="$event.stopPropagation()"
   >
+    <div>
+      <span
+        class="flex justify-end p-3 text-3xl transition-all duration-300"
+        [ngClass]="{
+          'opacity-100': open,
+          'opacity-0': !open
+        }"
+        ><ng-icon
+          (click)="close()"
+          class="cursor-pointer"
+          name="iconoirXmark"
+        ></ng-icon
+      ></span>
+    </div>
+    <!-- (click)="$event.stopPropagation()" serve a non far passare l'evento al genitore -->
+
     <div class="mt-[85px]">
       <nav class="px-5">
         <ul class="flex flex-col space-y-3">

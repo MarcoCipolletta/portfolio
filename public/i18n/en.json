@@ -3,5 +3,10 @@
     "home": "Home",
     "about": "About",
     "contacts": "Contacts"
+  },
+  "home": {
+    "role": "Full Stack Developer",
+    "hello": "Hi I'm",
+    "bio": "I'm passionate about writing clean code and building useful, well-crafted projects. I mainly work with Angular and Spring, and I enjoy taking on every challenge as an opportunity to grow."
   }
 }

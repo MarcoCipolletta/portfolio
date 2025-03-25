@@ -34,11 +34,17 @@ export class NavbarComponent {
     this.open = !this.open;
   }
 
-  setLang(lang: string) {
+  closeSidebar() {
+    this.open = false;
+  }
+
+  setLang(lang: 'it' | 'en') {
     this.languageSvc.setLanguage(lang);
+    this.closeSidebar();
   }
 
   toggleTheme() {
     this.toggleDarkSvc.toggleTheme();
+    this.closeSidebar();
   }
 }

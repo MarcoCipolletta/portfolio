@@ -8,7 +8,7 @@
   </div>
   <div class="md:hidden">
     <button
-      class="relative z-100 flex justify-center items-center border rounded-sm py-1 px-3 shadow-basic inset-shadow-2xs inset-shadow-seaGreen/0 hover:inset-shadow-hover hover:inset-shadow-seaGreen transition-all duration-300"
+      class="relative flex justify-center items-center border rounded-sm py-1 px-3 shadow-basic inset-shadow-2xs inset-shadow-seaGreen/0 hover:inset-shadow-hover hover:inset-shadow-seaGreen click"
       [ngClass]="{
         'border-almond text-almond dark:border-richBlack dark:text-richBlack dark:shadow-richBlack/25 shadow-almond/25':
           open,
@@ -30,7 +30,7 @@
     </ul>
   </div>
 </header>
-<app-sidebar [open]="open">
+<app-sidebar [open]="open" (closing)="open = $event">
   <ng-container nav-link *ngTemplateOutlet="navLinks"></ng-container>
   <ng-container utils *ngTemplateOutlet="utils"></ng-container>
 </app-sidebar>
@@ -69,7 +69,7 @@
 <ng-template #utils>
   <div class="w-full flex justify-center items-center">
     <button
-      class="group flex max-w-[2.25rem] border rounded-lg h-9 w-9 items-center justify-center cursor-pointer"
+      class="group flex max-w-[2.25rem] border rounded-lg h-9 w-9 items-center justify-center cursor-pointer click"
       (click)="toggleTheme()"
     >
       <span class="justify-center items-center dark:flex hidden">

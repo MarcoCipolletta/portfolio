@@ -36,8 +36,8 @@
   --inset-shadow-sidebar: inset 5px -5px 10px;
 }
 
-.test {
-  @apply text-red-500 font-bold;
+.click {
+  @apply active:scale-90 transition-all duration-300;
 }
 
 @layer base {

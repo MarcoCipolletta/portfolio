@@ -3,5 +3,10 @@
     "home": "Home",
     "about": "About",
     "contacts": "Contatti"
+  },
+  "home": {
+    "role": "Full Stack Developer",
+    "hello": "Ciao, sono",
+    "bio": "Mi appassiona scrivere codice chiaro e costruire progetti utili e ben fatti. Lavoro soprattutto con Angular e Spring, e mi piace affrontare ogni sfida come un’occasione per crescere."
   }
 }

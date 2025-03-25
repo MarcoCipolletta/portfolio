@@ -11,6 +11,8 @@ import {
   iconoirMenu,
   iconoirSunLight,
   iconoirHalfMoon,
+  iconoirDownload,
+  iconoirXmark,
 } from '@ng-icons/iconoir';
 import { SidebarComponent } from './main-component/sidebar/sidebar.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -22,7 +24,13 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgIconsModule.withIcons({ iconoirMenu, iconoirSunLight, iconoirHalfMoon }),
+    NgIconsModule.withIcons({
+      iconoirMenu,
+      iconoirSunLight,
+      iconoirHalfMoon,
+      iconoirDownload,
+      iconoirXmark,
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

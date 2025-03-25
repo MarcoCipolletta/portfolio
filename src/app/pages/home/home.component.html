@@ -1,5 +1,31 @@
-<div class="flex flex-col justify-center items-center h-[var(--navbar-height)]">
-  <div class="w-5"><app-profile-img></app-profile-img></div>
-  <div class="flex-grow-1">ciao</div>
-  <div class="bg-red-600">ciao</div>
+<div
+  class="flex flex-col justify-center gap-4 items-center h-[var(--navbar-height)]"
+>
+  <div class="w-[65%]"><app-profile-img></app-profile-img></div>
+  <div class="text-center px-5 flex-grow-1">
+    <h3 class="font-robotoMono tracking-widest">
+      {{ "home.role" | translate | uppercase }}
+    </h3>
+    <h1 class="text-4xl mt-3">
+      {{ "home.hello" | translate }} <br />
+      <span class="font-bold font-robotoMono text-seaGreen text-justify"
+        >Marco Cipolletta</span
+      >
+    </h1>
+    <p class="font-robotoMono text-xs/6 text-justify mt-3">
+      {{ "home.bio" | translate }}
+    </p>
+
+    <div class="mt-5">
+      <a
+        [href]="lang === 'it' ? 'CV_IT.pdf' : 'CV_EN.pdf'"
+        target="_blank"
+        class="inline-flex border border-seaGreen px-3 py-2 rounded-full cursor-pointer click"
+      >
+        <span class="flex justify-center items-center text-seaGreen">
+          DOWNLOAD CV &nbsp;<ng-icon name="iconoirDownload"></ng-icon
+        ></span>
+      </a>
+    </div>
+  </div>
 </div>

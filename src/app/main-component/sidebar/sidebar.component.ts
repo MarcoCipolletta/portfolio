@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class SidebarComponent {
   @Input() open: boolean = false;
+  @Output() closing = new EventEmitter<boolean>();
+
+  close() {
+    this.closing.emit(false);
+  }
 }

@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class LanguageService {
-  language = 'it';
-  lang$ = new BehaviorSubject('it');
+  language: 'it' | 'en' = 'it';
+  lang$ = new BehaviorSubject<'it' | 'en'>('it');
 
   constructor(private translate: TranslateService) {
     const browserLang = this.translate.getBrowserLang();
@@ -15,7 +15,7 @@ export class LanguageService {
     this.setLanguage(this.language);
   }
 
-  setLanguage(lang: string) {
+  setLanguage(lang: 'it' | 'en') {
     this.translate.use(lang);
     this.lang$.next(lang);
   }
