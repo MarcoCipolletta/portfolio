@@ -4,6 +4,7 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import AppServerModule from './src/main.server';
+import fs from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -31,6 +32,11 @@ export function app(): express.Express {
     })
   );
 
+  server.get('/debug-files', (req, res) => {
+    const files = fs.readdirSync(browserDistFolder);
+    res.send(files);
+  });
+
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
@@ -48,6 +54,10 @@ export function app(): express.Express {
   });
 
   console.log(1, serverDistFolder, 2, browserDistFolder, 3, indexHtml);
+  console.log(
+    '🗂️  Files in browser dist folder:',
+    fs.readdirSync(browserDistFolder)
+  );
 
   return server;
 }
