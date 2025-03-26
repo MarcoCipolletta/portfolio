@@ -43,6 +43,10 @@
 
 @layer base {
   body {
-    @apply bg-almond dark:bg-richBlack text-richBlack dark:text-almond;
+    @apply font-roboto bg-almond dark:bg-richBlack text-richBlack dark:text-almond;
   }
+}
+
+.techChecked {
+  @apply block w-full peer-checked:bg-almond dark:peer-checked:bg-richBlack px-3 py-1 rounded cursor-pointer transition-all duration-300;
 }

@@ -5,8 +5,10 @@
 /> -->
 <div class="container mx-auto px-4 mt-5">
   <div>
-    <h1 class="font-robotoMono">{{ "About me 🙋‍♂️" | uppercase }}</h1>
-    <p class="">
+    <h1 class="font-montserrat text-2xl font-bold">
+      {{ "About me 🙋‍♂️" | uppercase }}
+    </h1>
+    <p class="mt-5 mb-3">
       {{ "bio.par1.intro" | translate }}
       <span class="text-seaGreen font-bold">{{
         "bio.par1.name" | translate | uppercase
@@ -15,7 +17,7 @@
         >, {{ "bio.par1.role" | translate }}</span
       ><span>&nbsp;{{ "bio.par1.end" | translate }}</span>
     </p>
-    <p>
+    <p class="mb-3">
       {{ "bio.par2.intro" | translate }}
       <span class="font-bold font-robotoMono">{{
         "bio.par2.angular" | translate
@@ -26,7 +28,48 @@
       }}</span>
       {{ "bio.par2.end" | translate }}
     </p>
-    <p>{{ "bio.par3" | translate }}</p>
-    <p>{{ "bio.par4" | translate }}</p>
+    <p class="mb-3">{{ "bio.par3" | translate }}</p>
+    <p class="">{{ "bio.par4" | translate }}</p>
+  </div>
+  <div>
+    <h1 class="font-montserrat text-2xl font-bold mt-10">
+      {{ "Skills 🔧" | uppercase }}
+    </h1>
+
+    <div class="mt-3">
+      <div
+        class="w-full px-5 py-2 flex justify-between items-center bg-richBlack/5 dark:bg-almond/10 rounded-lg"
+      >
+        <div class="w-full text-center">
+          <input
+            type="radio"
+            name="tech"
+            id="frontend"
+            class="peer hidden"
+            checked
+          />
+          <label for="frontend" class="techChecked">FrontEnd</label>
+        </div>
+        <div class="w-full text-center">
+          <input type="radio" name="tech" id="backend" class="peer hidden" />
+          <label for="backend" class="techChecked">BackEnd</label>
+        </div>
+        <div class="w-full text-center">
+          <input type="radio" name="tech" id="other" class="peer hidden" />
+          <label for="other" class="techChecked">Other</label>
+        </div>
+      </div>
+      <div></div>
+      @for (item of techs.front; track $index) {
+      <img class="w-[150px]" [src]="'tech/' + item.logo" alt="" />
+      <p>{{ item.name }}</p>
+      } @for (item of techs.back; track $index) {
+      <img class="w-[150px]" [src]="'tech/' + item.logo" alt="" />
+      <p>{{ item.name }}</p>
+      } @for (item of techs.other; track $index) {
+      <img class="w-[150px]" [src]="'tech/' + item.logo" alt="" />
+      <p>{{ item.name }}</p>
+      }
+    </div>
   </div>
 </div>
