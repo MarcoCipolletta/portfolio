@@ -16,59 +16,59 @@ export class AboutComponent {
   techs = {
     front: [
       {
-        logo: 'Html.svg',
+        logo: 'html.svg',
         name: 'HTML5',
       },
       {
-        logo: 'Css.svg',
+        logo: 'css.svg',
         name: 'Css3',
       },
       {
-        logo: 'Sass.svg',
+        logo: 'sass.svg',
         name: 'Sass/Scss',
       },
       {
-        logo: 'JavaScript.svg',
+        logo: 'javaScript.svg',
         name: 'JavaScript',
       },
       {
-        logo: 'TypeScript.svg',
+        logo: 'typeScript.svg',
         name: 'TypeScript',
       },
       {
-        logo: 'Angular.svg',
+        logo: 'angular.svg',
         name: 'Angular',
       },
       {
-        logo: 'Bootstrap.svg',
+        logo: 'bootstrap.svg',
         name: 'Bootstrap',
       },
       {
-        logo: 'Tailwind.svg',
+        logo: 'tailwind.svg',
         name: 'Tailwind',
       },
     ],
     back: [
       {
-        logo: 'Java.svg',
+        logo: 'java.svg',
         name: 'Java',
       },
       {
-        logo: 'Spring.svg',
+        logo: 'spring.svg',
         name: 'Spring',
       },
       {
-        logo: 'Postgresql.svg',
+        logo: 'postgresql.svg',
         name: 'PostgreSQL',
       },
     ],
     other: [
       {
-        logo: 'Firebase.svg',
+        logo: 'firebase.svg',
         name: 'Firebase',
       },
       {
-        logo: 'Github.svg',
+        logo: 'github.svg',
         name: 'Github',
       },
     ],
