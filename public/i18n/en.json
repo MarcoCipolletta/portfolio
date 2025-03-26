@@ -2,7 +2,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "projects": "Projects"
   },
   "home": {
     "role": "Full Stack Developer",

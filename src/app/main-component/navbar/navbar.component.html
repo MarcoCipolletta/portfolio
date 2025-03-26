@@ -61,6 +61,15 @@
   <li>
     <a
       class="hover:text-seaGreen transition-all duration-300"
+      routerLink="/projects"
+      routerLinkActive="text-seaGreen"
+      (click)="open = false"
+      >{{ "nav.projects" | translate | uppercase }}</a
+    >
+  </li>
+  <li>
+    <a
+      class="hover:text-seaGreen transition-all duration-300"
       routerLink="/contact"
       routerLinkActive="text-seaGreen"
       (click)="open = false"

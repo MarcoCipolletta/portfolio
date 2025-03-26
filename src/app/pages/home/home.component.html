@@ -1,22 +1,24 @@
 <div
-  class="container mx-auto flex flex-col justify-center gap-4 items-center min-h-[var(--navbar-height)] md:grid md:grid-cols-2"
+  class="lg:container mx-auto flex flex-col justify-center gap-10 items-center min-h-[var(--navbar-height)] md:grid md:grid-cols-2 md:gap-0"
 >
-  <div
-    class="max-w-[65%] max-h-full md:place-self-center md:max-w-[65%] md:order-1"
-  >
+  <div class="max-w-[60%] max-h-full md:place-self-center md:order-1">
     <app-profile-img></app-profile-img>
   </div>
   <div class="text-center px-5 flex-grow-1">
     <h3 class="font-robotoMono tracking-widest">
       {{ "home.role" | translate | uppercase }}
     </h3>
-    <h1 class="text-4xl mt-3">
+    <h1
+      class="text-4xl mt-3 md:text-[clamp(35px,4.6vw,49px)] xl:text-[clamp(49px,4vw,75px)]"
+    >
       {{ "home.hello" | translate }} <br />
       <span class="font-bold font-robotoMono text-seaGreen text-justify"
         >Marco Cipolletta</span
       >
     </h1>
-    <p class="font-robotoMono text-xs/6 text-justify mt-3">
+    <p
+      class="font-robotoMono text-xs/6 text-justify mt-3 sm:text-base lg:text-lg"
+    >
       {{ "home.bio" | translate }}
     </p>
 
@@ -30,7 +32,7 @@
           DOWNLOAD CV &nbsp;<ng-icon name="iconoirDownload"></ng-icon
         ></span>
       </a>
-      <!-- Da vedere se metterli affianco o sotto -->
+
       <a
         href="https://www.linkedin.com/in/marco-cipolletta/"
         target="_blank"
@@ -50,25 +52,5 @@
         </span>
       </a>
     </div>
-    <!-- <div class="mt-5 flex justify-center items-center gap-4">
-      <a
-        href="https://www.linkedin.com/in/marco-cipolletta/"
-        target="_blank"
-        class="inline-flex aspect-square border border-accent px-2 py-1 rounded-[50%] cursor-pointer click"
-      >
-        <span class="flex justify-center items-center text-xl text-accent">
-          <ng-icon name="iconoirLinkedin"></ng-icon>
-        </span>
-      </a>
-      <a
-        href="https://github.com/MarcoCipolletta"
-        target="_blank"
-        class="inline-flex border border-accent aspect-square rounded-[50%] px-2 py-1 cursor-pointer click"
-      >
-        <span class="flex justify-center items-center text-xl text-accent">
-          <ng-icon name="iconoirGithub"></ng-icon>
-        </span>
-      </a>
-    </div> -->
   </div>
 </div>
