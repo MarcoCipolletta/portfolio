@@ -1,7 +1,9 @@
 <div
-  class="flex flex-col justify-center gap-4 items-center min-h-[var(--navbar-height)] md:flex-row md:min-h-auto"
+  class="container mx-auto flex flex-col justify-center gap-4 items-center min-h-[var(--navbar-height)] md:grid md:grid-cols-2"
 >
-  <div class="max-w-[65%] max-h-full md:order-1">
+  <div
+    class="max-w-[65%] max-h-full md:place-self-center md:max-w-[65%] md:order-1"
+  >
     <app-profile-img></app-profile-img>
   </div>
   <div class="text-center px-5 flex-grow-1">
