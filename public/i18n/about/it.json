@@ -1,0 +1,19 @@
+{
+  "bio": {
+    "par1": {
+      "intro": "👨‍💻 Ciao! Sono",
+      "name": "Marco",
+      "role": "full stack developer",
+      "end": "con una passione per la tecnologia e le soluzioni ben fatte."
+    },
+    "par2": {
+      "intro": "📚 Mi sono formato in un bootcamp intensivo, dove ho imparato a sviluppare applicazioni complete con",
+      "angular": "Angular",
+      "and": " e ",
+      "spring": "Java Spring",
+      "end": "lavorando su progetti reali come sistemi di prenotazione e piattaforme per eventi."
+    },
+    "par3": "🎯 Mi piace affrontare sfide, scrivere codice pulito e lavorare in squadra. ",
+    "par4": "🏃‍♂️ Fuori dal lavoro, lo sport mi aiuta a mantenere l’equilibrio."
+  }
+}

@@ -1,1 +1,32 @@
-<p>about works!</p>
+<!-- <img
+  class="dark:invert-100"
+  src="https://cdni.iconscout.com/illustration/premium/thumb/tech-support-illustration-download-in-svg-png-gif-file-formats--call-logo-helpdesk-helpline-hotline-online-web-hosting-pack-business-illustrations-3779855.png?f=webp"
+  alt=""
+/> -->
+<div class="container mx-auto px-4 mt-5">
+  <div>
+    <h1 class="font-robotoMono">{{ "About me 🙋‍♂️" | uppercase }}</h1>
+    <p class="">
+      {{ "bio.par1.intro" | translate }}
+      <span class="text-seaGreen font-bold">{{
+        "bio.par1.name" | translate | uppercase
+      }}</span
+      ><span class="font-bold font-robotoMono"
+        >, {{ "bio.par1.role" | translate }}</span
+      ><span>&nbsp;{{ "bio.par1.end" | translate }}</span>
+    </p>
+    <p>
+      {{ "bio.par2.intro" | translate }}
+      <span class="font-bold font-robotoMono">{{
+        "bio.par2.angular" | translate
+      }}</span>
+      <span>{{ "bio.par2.and" | translate }}</span>
+      <span class="font-bold font-robotoMono">{{
+        "bio.par2.spring" | translate
+      }}</span>
+      {{ "bio.par2.end" | translate }}
+    </p>
+    <p>{{ "bio.par3" | translate }}</p>
+    <p>{{ "bio.par4" | translate }}</p>
+  </div>
+</div>
