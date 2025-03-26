@@ -9,8 +9,11 @@ import AppServerModule from './src/main.server';
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(serverDistFolder, 'index.html');
+  const browserDistFolder = resolve(
+    serverDistFolder,
+    './dist/portfolio/browser'
+  );
+  const indexHtml = join(browserDistFolder, 'index.html'); // NON nella root
 
   const commonEngine = new CommonEngine();
 
@@ -43,6 +46,8 @@ export function app(): express.Express {
       .then((html) => res.send(html))
       .catch((err) => next(err));
   });
+
+  console.log(1, serverDistFolder, 2, browserDistFolder, 3, indexHtml);
 
   return server;
 }
