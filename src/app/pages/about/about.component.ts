@@ -11,6 +11,8 @@ export class AboutComponent {
     this.aboutTranslateSvc.loadTranslations();
   }
 
+  select: 'front' | 'back' | 'other' = 'front';
+
   techs = {
     front: [
       {

@@ -15,12 +15,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
 @theme {
   --color-seaGreen: var(--seaGreen);
   --color-accent: var(--accent);
@@ -33,6 +27,7 @@
   --font-rockSalt: var(--rockSalt);
 
   --shadow-basic: 2px 2px 5px;
+  --shadow-tech: 0px 0px 9px;
   --inset-shadow-hover: inset 0px 0px 10px;
   --inset-shadow-sidebar: inset 5px -5px 10px;
 }
@@ -48,5 +43,5 @@
 }
 
 .techChecked {
-  @apply block w-full peer-checked:bg-almond dark:peer-checked:bg-richBlack px-3 py-1 rounded cursor-pointer transition-all duration-300;
+  @apply block w-full peer-checked:bg-almond/65 dark:peer-checked:bg-richBlack/25 px-3 py-1 rounded cursor-pointer transition-all duration-300;
 }
