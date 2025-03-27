@@ -1,4 +1,78 @@
-<div class="min-h-[var(--navbar-height)] flex justify-center items-center">
+<div class="container mx-auto px-4">
+  <h1 class="font-montserrat text-2xl font-bold my-5">
+    {{ "projects.title" | translate | uppercase }}
+  </h1>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 justify-center items-start"
+  >
+    @for (project of ('projects.list' | translate); track $index) {
+    <div class="relative">
+      <div
+        class="bg-richBlack/5 dark:bg-almond/10 rounded-2xl shadow-md p-6 transition-transform hover:scale-105 flex flex-col h-full"
+      >
+        <h3 class="text-2xl font-mono font-bold text-seaGreen mb-2">
+          {{ project.name }}
+        </h3>
+
+        <div class="flex-grow-1">
+          <p
+            [ngClass]="
+              expandedStates[$index] ? 'max-h-96' : 'max-h-16 line-clamp-2'
+            "
+            class="text-gray-700 overflow-hidden transition-all duration-300 ease-in-out mb-1"
+          >
+            {{ project.desc }}
+          </p>
+
+          <button
+            (click)="expandedStates[$index] = !expandedStates[$index]"
+            class="text-seaGreen font-bold text-sm underline mb-4 self-start cursor-pointer"
+          >
+            {{
+              expandedStates[$index]
+                ? ("projects.read.readLess" | translate)
+                : ("projects.read.readMore" | translate)
+            }}
+          </button>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+          @for (tech of project.techs; track $index) {
+          <img
+            src="tech/{{ tech | lowercase }}.svg"
+            [alt]="tech"
+            class="w-6 h-6 hover:scale-150 transition-all duration-300 ease-in-out"
+          />
+          }
+        </div>
+
+        <div class="flex gap-4 mt-auto justify-between">
+          <a
+            *ngIf="project.live"
+            [href]="project.live"
+            target="_blank"
+            class="bg-seaGreen text-almond px-3 text-lg font-bold flex justify-center items-center rounded-full hover:bg-green-800 transition"
+          >
+            <ng-icon name="akarLinkOut"></ng-icon>
+          </a>
+          <a
+            [href]="project.repo"
+            target="_blank"
+            class="border border-seaGreen px-4 py-2 rounded-full text-lg font-bold flex justify-center items-center hover:bg-seaGreen/30 transition"
+          >
+            <ng-icon name="akarGithubFill"></ng-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+<!-- TODO: Da rimuovere -->
+
+<div class="mt-20 flex justify-center items-center">
   <H1 class="flex justify-center items-center"
     >Work in progress
     <span class="ml-3"
@@ -14,6 +88,7 @@
       ><span class="relative flex size-3">
         <span
           class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"
+          style="animation-delay: 100ms"
         ></span>
         <span
           class="relative inline-flex size-3 rounded-full bg-seaGreen"
@@ -23,6 +98,7 @@
       ><span class="relative flex size-3">
         <span
           class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"
+          style="animation-delay: 200ms"
         ></span>
         <span
           class="relative inline-flex size-3 rounded-full bg-seaGreen"
@@ -30,3 +106,5 @@
     ></span>
   </H1>
 </div>
+
+<!-- TODO: Da rimuovere -->

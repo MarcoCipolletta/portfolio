@@ -16,6 +16,7 @@ import {
   iconoirLinkedin,
   iconoirGithub,
 } from '@ng-icons/iconoir';
+import { akarLinkOut, akarGithubFill } from '@ng-icons/akar-icons';
 import { SidebarComponent } from './main-component/sidebar/sidebar.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './services/translate/HttpLoaderFactory';
@@ -34,6 +35,8 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
       iconoirXmark,
       iconoirLinkedin,
       iconoirGithub,
+      akarLinkOut,
+      akarGithubFill,
     }),
     TranslateModule.forRoot({
       loader: {

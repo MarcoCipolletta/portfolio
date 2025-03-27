@@ -33,11 +33,11 @@ export class AboutComponent {
         name: 'Sass/Scss',
       },
       {
-        logo: 'javaScript.svg',
+        logo: 'javascript.svg',
         name: 'JavaScript',
       },
       {
-        logo: 'typeScript.svg',
+        logo: 'typescript.svg',
         name: 'TypeScript',
       },
       {
@@ -75,6 +75,10 @@ export class AboutComponent {
       {
         logo: 'github.svg',
         name: 'Github',
+      },
+      {
+        logo: 'emailjs.svg',
+        name: 'Email.JS',
       },
     ],
   };

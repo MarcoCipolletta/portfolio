@@ -1,0 +1,53 @@
+{
+  "projects": {
+    "title": "Projects",
+    "list": [
+      {
+        "name": "Home Restaurant",
+        "desc": "Web application developed with Angular for managing home restaurant reservations. Users can select an available date, enter their information, and book a table. The system automatically sends a confirmation email thanks to the integration with EmailJS. Data is stored in Firebase, which also handles site hosting. The interface is responsive and designed to offer a simple and intuitive user experience.",
+        "techs": [
+          "Html",
+          "Angular",
+          "Sass",
+          "Bootstrap",
+          "TypeScript",
+          "Firebase",
+          "EmailJS"
+        ],
+        "live": "https://homerestaurantali.web.app",
+        "repo": "https://github.com/MarcoCipolletta/HomeRestaurantAli.git"
+      },
+      {
+        "name": "Hair Salon",
+        "desc": "Final project of the Full Stack Web Developer course, developed with Angular, Spring Boot, and PostgreSQL. The application allows customers to view available time slots and book services, while admins can manage holidays, availability, and reservations. The system includes JWT authentication, an admin panel, automatic confirmation emails, and a responsive interface.",
+        "techs": [
+          "Html",
+          "Angular",
+          "Sass",
+          "Bootstrap",
+          "TypeScript",
+          "Java",
+          "Spring",
+          "PostgreSQL"
+        ],
+        "live": "",
+        "repo": "https://github.com/MarcoCipolletta/Capstone_Hair_Salon"
+      },
+      {
+        "name": "Personal Portfolio",
+        "desc": "Portfolio website built with Angular 18 to showcase projects, technologies used, and the learning path followed as a full stack developer. The site is fully responsive, includes animations and dark mode, and was designed to apply skills such as component architecture, state management, and attention to UI/UX.",
+        "techs": ["Html", "Angular", "Sass", "Tailwind", "TypeScript"],
+        "live": "",
+        "repo": "https://github.com/MarcoCipolletta/portfolio.git"
+      },
+      {
+        "name": "Event Management API",
+        "desc": "Backend project developed in Java with Spring Boot, exposing a REST API for managing events. The system allows the creation, updating, and deletion of events, user management, and organization of related activity data. It was developed as a practical exercise to strengthen skills in Spring Boot, JPA, and MVC architecture in a real-world scenario.",
+        "techs": ["Java", "Spring", "PostgreSQL"],
+        "live": "",
+        "repo": "https://github.com/MarcoCipolletta/U5-W3-D5-Progetto.git"
+      }
+    ],
+    "read": { "readMore": "Read more", "readLess": "Read less" }
+  }
+}
