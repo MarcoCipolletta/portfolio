@@ -38,26 +38,26 @@ export function app(): express.Express {
   });
 
   // All regular routes use the Angular engine
-  server.get('**', (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
+  server.get('*', async (req, res) => {
+    const { originalUrl, baseUrl } = req;
 
-    commonEngine
-      .render({
+    try {
+      const html = await commonEngine.render({
         bootstrap: AppServerModule,
         documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
+        url: originalUrl,
         publicPath: browserDistFolder,
         providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-      })
-      .then((html) => res.send(html))
-      .catch((err) => next(err));
-  });
+      });
 
-  console.log(1, serverDistFolder, 2, browserDistFolder, 3, indexHtml);
-  console.log(
-    '🗂️  Files in browser dist folder:',
-    fs.readdirSync(browserDistFolder)
-  );
+      res.status(200).send(html);
+    } catch (err) {
+      // Forza il fallback al client-side rendering anche in caso di errore
+      const html = fs.readFileSync(indexHtml).toString();
+      // res.status(404).send(html); // status 200, così Angular sul client può fare il routing
+      res.status(404).redirect('404');
+    }
+  });
 
   return server;
 }

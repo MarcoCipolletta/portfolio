@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AboutTranslateService } from './about-translate.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,11 @@ import { AboutTranslateService } from './about-translate.service';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
-  constructor(private aboutTranslateSvc: AboutTranslateService) {
+  constructor(
+    private aboutTranslateSvc: AboutTranslateService,
+    private meta: Meta
+  ) {
+    this.meta.removeTag('name="robots"');
     this.aboutTranslateSvc.loadTranslations();
   }
 

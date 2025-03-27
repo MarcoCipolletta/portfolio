@@ -22,11 +22,15 @@ export class NavbarComponent {
 
   ngAfterViewInit(): void {
     if (this.browser.isBrowser() && this.navRef) {
-      let navbarHeight = this.navRef.nativeElement.offsetHeight;
-      document.documentElement.style.setProperty(
-        '--navbar-height',
-        `calc( 100dvh - ${navbarHeight}px)`
-      );
+      const navbarHeight = this.navRef.nativeElement.offsetHeight;
+      const documentRef = this.browser.document;
+
+      if (documentRef) {
+        documentRef.documentElement.style.setProperty(
+          '--navbar-height',
+          `calc( 100dvh - ${navbarHeight}px)`
+        );
+      }
     }
   }
 

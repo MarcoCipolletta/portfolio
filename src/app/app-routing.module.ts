@@ -1,13 +1,13 @@
 import { HomeModule } from './pages/home/home.module';
-import { NgModule } from '@angular/core';
+import { inject, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LanguageService } from './services/translate/language.service';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
-    title: 'Marco Cipolletta - Home',
   },
   {
     path: 'about',
@@ -19,19 +19,18 @@ const routes: Routes = [
     path: 'projects',
     loadChildren: () =>
       import('./pages/projects/projects.module').then((m) => m.ProjectsModule),
-    title: 'Marco Cipolletta - Projects',
   },
   {
     path: 'contact',
     loadChildren: () =>
       import('./pages/contact/contact.module').then((m) => m.ContactModule),
-    title: 'Marco Cipolletta - Contact',
   },
   {
-    path: '**',
+    path: '404',
     loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
-    title: 'Not Found',
+      import('./pages/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
   },
 ];
 
