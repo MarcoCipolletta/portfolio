@@ -46,6 +46,27 @@
         "techs": ["Java", "Spring", "PostgreSQL"],
         "live": "",
         "repo": "https://github.com/MarcoCipolletta/U5-W3-D5-Progetto.git"
+      },
+      {
+        "name": "React Starter",
+        "desc": "Progetto introduttivo sviluppato con React e TypeScript utilizzando Vite come bundler. L’obiettivo era prendere confidenza con la struttura di un’applicazione React moderna e testare il setup con componenti, props e gestione base dello stato.",
+        "techs": ["React", "TypeScript", "Sass"],
+        "live": "",
+        "repo": "https://github.com/MarcoCipolletta/my-first-react-project.git"
+      },
+      {
+        "name": "Angular SPA",
+        "desc": "Progetto frontend sviluppato con Angular come esercitazione pratica. L'applicazione simula un sistema completo di autenticazione (login, protezione delle rotte) e gestione dei dati tramite un'API mock locale con JSON Server. Include routing, gestione dello stato con servizi, componenti dinamici e un’interfaccia responsive. Il progetto è stato realizzato per consolidare l’uso di Angular in contesti reali di sviluppo frontend.",
+        "techs": ["Angular", "TypeScript", "Bootstrap"],
+        "live": "",
+        "repo": "https://github.com/MarcoCipolletta/U3-W3-D5-Progetto.git"
+      },
+      {
+        "name": "To-Do List",
+        "desc": "Applicazione semplice per la gestione delle attività (to-do list), sviluppata nelle prime settimane del corso per imparare le basi di JavaScript, la manipolazione del DOM e l’interazione con l’utente. Permette di aggiungere, rimuovere e completare attività in una lista dinamica.",
+        "techs": ["HTML", "CSS", "JavaScript"],
+        "live": "",
+        "repo": "https://github.com/MarcoCipolletta/U1-W3-D3-To-Do-List.git"
       }
     ],
     "read": { "readMore": "Leggi di più", "readLess": "Leggi meno" }
