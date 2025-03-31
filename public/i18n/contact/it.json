@@ -1,0 +1,15 @@
+{
+  "contact": {
+    "title": "Contatti",
+    "subtitle_pt1": "Lavori da proporre, idee da sviluppare o solo una domanda?",
+    "subtitle_pt2": "Scrivimi pure: sono sempre aperto a nuove opportunità e collaborazioni.",
+    "phone": "Telefono",
+    "location": "Posizione",
+    "form": {
+      "title": "Inviami un messaggio",
+      "name": "Nome",
+      "message": "Messaggio",
+      "btn": "Invia messaggio"
+    }
+  }
+}
