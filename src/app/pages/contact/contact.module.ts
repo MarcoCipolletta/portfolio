@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
-
+import { NgIconsModule } from '@ng-icons/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [
-    ContactComponent
-  ],
+  declarations: [ContactComponent],
   imports: [
     CommonModule,
-    ContactRoutingModule
-  ]
+    ContactRoutingModule,
+    NgIconsModule,
+    TranslateModule.forChild(),
+  ],
 })
-export class ContactModule { }
+export class ContactModule {}

@@ -15,6 +15,7 @@ import {
   iconoirXmark,
   iconoirLinkedin,
   iconoirGithub,
+  iconoirMail,
 } from '@ng-icons/iconoir';
 import { akarLinkOut, akarGithubFill } from '@ng-icons/akar-icons';
 import { SidebarComponent } from './main-component/sidebar/sidebar.component';
@@ -37,6 +38,7 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
       iconoirGithub,
       akarLinkOut,
       akarGithubFill,
+      iconoirMail,
     }),
     TranslateModule.forRoot({
       loader: {

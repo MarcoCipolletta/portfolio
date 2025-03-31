@@ -1,0 +1,14 @@
+{
+  "contact": {
+    "title": "Get in touch",
+    "subtitle_pt1": "Have a project in mind, an idea to develop, or just a question?",
+    "subtitle_pt2": "Feel free to write me — I'm always open to new opportunities and collaborations.",
+    "phone": "Phone",
+    "location": "Location",
+    "form": {
+      "name": "Name",
+      "message": "Message",
+      "btn": "Send message"
+    }
+  }
+}

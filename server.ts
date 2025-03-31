@@ -60,7 +60,7 @@ export function app(): express.Express {
     } catch (err) {
       // Forza il fallback al client-side rendering anche in caso di errore
       const html = fs.readFileSync(indexHtml).toString();
-      // res.status(404).send(html); // status 200, così Angular sul client può fare il routing
+      // res.status(404).send(html); // così Angular sul client può fare il routing
       return res.status(404).redirect('404');
     }
   });
@@ -113,14 +113,12 @@ export function app(): express.Express {
 
       return res.status(200).json({ success: true });
     } catch (error) {
-      return res
-        .status(500)
-        .json({
-          error:
-            lang === 'it'
-              ? 'Errore durante l’invio dell’email'
-              : 'Error sending email',
-        });
+      return res.status(500).json({
+        error:
+          lang === 'it'
+            ? 'Errore durante l’invio dell’email'
+            : 'Error sending email',
+      });
     }
   });
 

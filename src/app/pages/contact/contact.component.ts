@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { LanguageService } from '../../services/translate/language.service';
 import { HttpClient } from '@angular/common/http';
+import { ContactTranslateService } from './contact-translate.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,8 @@ export class ContactComponent {
     private meta: Meta,
     private title: Title,
     private langSvc: LanguageService,
-    private http: HttpClient
+    private http: HttpClient,
+    private contactTranslateSvc: ContactTranslateService
   ) {
     this.meta.removeTag('name="robots"');
     this.langSvc.lang$.subscribe((lang) => {
@@ -21,6 +23,7 @@ export class ContactComponent {
         `Marco Cipolletta - ${lang === 'it' ? 'Contatti' : 'Contacts'}`
       );
     });
+    this.contactTranslateSvc.loadTranslations();
   }
 
   provaIt() {
