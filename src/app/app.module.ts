@@ -16,6 +16,7 @@ import {
   iconoirLinkedin,
   iconoirGithub,
   iconoirMail,
+  iconoirEmojiSad,
 } from '@ng-icons/iconoir';
 import { akarLinkOut, akarGithubFill } from '@ng-icons/akar-icons';
 import { SidebarComponent } from './main-component/sidebar/sidebar.component';
@@ -39,6 +40,7 @@ import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
       akarLinkOut,
       akarGithubFill,
       iconoirMail,
+      iconoirEmojiSad,
     }),
     TranslateModule.forRoot({
       loader: {

@@ -1,5 +1,22 @@
 textarea {
   min-height: 65px;
-  height: 168px;
+  height: 152px;
   max-height: 300px;
+}
+
+.validator {
+  position: absolute;
+  bottom: -20px;
+  &.last {
+    bottom: -15px;
+  }
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  padding-block: 0.2rem;
+  color: #891c1c;
+  ng-icon {
+    font-size: 1rem;
+    margin-inline-end: 0.25rem;
+  }
 }

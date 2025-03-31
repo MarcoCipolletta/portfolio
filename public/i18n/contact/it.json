@@ -6,6 +6,7 @@
     "phone": "Telefono",
     "location": "Posizione",
     "form": {
+      "title": "Inviami un messaggio",
       "name": "Nome",
       "message": "Messaggio",
       "btn": "Invia messaggio"

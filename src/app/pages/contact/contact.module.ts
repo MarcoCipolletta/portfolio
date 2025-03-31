@@ -5,6 +5,7 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 import { NgIconsModule } from '@ng-icons/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ContactComponent],
@@ -13,6 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
     ContactRoutingModule,
     NgIconsModule,
     TranslateModule.forChild(),
+    ReactiveFormsModule,
   ],
 })
 export class ContactModule {}
