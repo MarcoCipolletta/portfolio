@@ -16,6 +16,10 @@ export class ProjectsComponent {
     private projectTranslateSvc: ProjectsTranslateService
   ) {
     this.meta.removeTag('name="robots"');
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://marco-cipolletta-portfolio.onrender.com/projects',
+    });
     this.langSvc.lang$.subscribe((lang) => {
       this.title.setTitle(
         `Marco Cipolletta - ${lang === 'it' ? 'Progetti' : 'Projects'}`

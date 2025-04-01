@@ -27,6 +27,10 @@ export class ContactComponent {
     private fb: FormBuilder
   ) {
     this.meta.removeTag('name="robots"');
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://marco-cipolletta-portfolio.onrender.com/contact',
+    });
     this.langSvc.lang$.subscribe((lang) => {
       this.lang = lang;
       this.title.setTitle(

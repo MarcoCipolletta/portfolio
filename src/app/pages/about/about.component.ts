@@ -13,6 +13,10 @@ export class AboutComponent {
     private meta: Meta
   ) {
     this.meta.removeTag('name="robots"');
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://marco-cipolletta-portfolio.onrender.com/about',
+    });
     this.aboutTranslateSvc.loadTranslations();
   }
 

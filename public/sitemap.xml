@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://marco-cipolletta-portfolio.onrender.com/</loc>
+    <lastmod>2025-04-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://marco-cipolletta-portfolio.onrender.com/about</loc>
+    <lastmod>2025-04-01</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://marco-cipolletta-portfolio.onrender.com/projects</loc>
+    <lastmod>2025-04-01</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://marco-cipolletta-portfolio.onrender.com/contact</loc>
+    <lastmod>2025-04-01</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
