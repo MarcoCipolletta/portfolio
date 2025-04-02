@@ -110,7 +110,12 @@
   <div
     class="border border-richBlack/5 dark:border-almond/10 rounded-lg p-4 flex flex-col justify-center items-center bg-almond/10 dark:bg-richBlack/10 hover:bg-almond/25 dark:hover:bg-richBlack/25 hover:shadow-accent hover:shadow-tech transition-all duration-300"
   >
-    <img class="w-[50%]" [src]="'tech/' + item.logo" alt="" />
+    <img
+      class="w-[50%]"
+      [src]="'tech/' + item.logo"
+      [alt]="item.name"
+      loading="lazy"
+    />
     <p class="uppercase font-robotoMono font-bold text-sm">{{ item.name }}</p>
   </div>
 </ng-template>
