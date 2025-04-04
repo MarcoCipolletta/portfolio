@@ -18,7 +18,7 @@ export class NavbarComponent {
     this.languageSvc.lang$.subscribe((lang) => (this.lang = lang));
   }
   open: boolean = false;
-  lang: string = '';
+  lang!: 'it' | 'en';
 
   ngAfterViewInit(): void {
     if (this.browser.isBrowser() && this.navRef) {

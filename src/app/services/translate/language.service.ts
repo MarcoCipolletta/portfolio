@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -9,10 +11,26 @@ export class LanguageService {
   language: 'it' | 'en' = 'it';
   lang$ = new BehaviorSubject<'it' | 'en'>('it');
 
-  constructor(private translate: TranslateService) {
-    const browserLang = this.translate.getBrowserLang();
-    this.language = browserLang === 'it' ? 'it' : 'en';
-    this.setLanguage(this.language);
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Optional() @Inject('APP_LANGUAGE') private serverLang?: 'it' | 'en'
+  ) {
+    let lang: 'it' | 'en' = 'it';
+
+    // ✅ Se siamo su SSR, usa la lingua iniettata da Angular Universal
+    if (isPlatformServer(this.platformId) && this.serverLang) {
+      lang = this.serverLang;
+    }
+
+    // ✅ Se siamo nel browser, usa la lingua del browser
+    if (isPlatformBrowser(this.platformId)) {
+      const browserLang = this.translate.getBrowserLang();
+      lang = browserLang === 'it' ? 'it' : 'en';
+    }
+
+    this.language = lang;
+    this.setLanguage(lang);
   }
 
   setLanguage(lang: 'it' | 'en') {

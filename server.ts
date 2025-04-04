@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 import { log } from 'node:console';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 dotenv.config();
 
@@ -53,7 +54,10 @@ export function app(): express.Express {
         documentFilePath: indexHtml,
         url: originalUrl,
         publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+        providers: [
+          { provide: APP_BASE_HREF, useValue: baseUrl },
+          { provide: REQUEST, useValue: req },
+        ],
       });
 
       return res.status(200).send(html);
