@@ -9,5 +9,9 @@
     "role": "Full Stack Developer",
     "hello": "Hi I'm",
     "bio": "I'm passionate about writing clean code and building useful, well-crafted projects. I mainly work with Angular and Spring, and I enjoy taking on every challenge as an opportunity to grow."
+  },
+  "404": {
+    "text": "The page you are looking for doesn't exist",
+    "btn": "Go to Homepage"
   }
 }
