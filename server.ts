@@ -44,6 +44,10 @@ export function app(): express.Express {
     res.send(files);
   });
 
+  server.get('/ping', (req, res) => {
+    res.status(200).send('pong');
+  });
+
   // All regular routes use the Angular engine
   server.get('*', async (req, res) => {
     const { originalUrl, baseUrl } = req;
