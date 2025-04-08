@@ -28,6 +28,14 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
+  server.use(
+    cors({
+      origin: 'https://homerestaurantali.web.app',
+      methods: ['GET'],
+      allowedHeaders: ['Content-Type'],
+    })
+  );
+
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
@@ -72,14 +80,6 @@ export function app(): express.Express {
       return res.status(404).redirect('404');
     }
   });
-
-  server.use(
-    cors({
-      origin: 'https://homerestaurantali.web.app',
-      methods: ['GET'],
-      allowedHeaders: ['Content-Type'],
-    })
-  );
 
   //  Servizio e api per inviare email
   server.use(bodyParser.json());
