@@ -8,7 +8,7 @@ import fs from 'fs';
 import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
-import { log } from 'node:console';
+import cors from 'cors';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 dotenv.config();
@@ -72,6 +72,14 @@ export function app(): express.Express {
       return res.status(404).redirect('404');
     }
   });
+
+  server.use(
+    cors({
+      origin: 'https://homerestaurantali.web.app',
+      methods: ['GET'],
+      allowedHeaders: ['Content-Type'],
+    })
+  );
 
   //  Servizio e api per inviare email
   server.use(bodyParser.json());
