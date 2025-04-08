@@ -28,14 +28,6 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  server.use(
-    cors({
-      origin: 'https://homerestaurantali.web.app',
-      methods: ['GET'],
-      allowedHeaders: ['Content-Type'],
-    })
-  );
-
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
