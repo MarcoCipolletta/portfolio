@@ -8,6 +8,7 @@
   "home": {
     "role": "Full Stack Developer",
     "hello": "Hi I'm",
+    "intro": "💻 I build functional digital solutions designed to last.",
     "bio": "I'm passionate about writing clean code and building useful, well-crafted projects. I mainly work with Angular and Spring, and I enjoy taking on every challenge as an opportunity to grow."
   },
   "404": {

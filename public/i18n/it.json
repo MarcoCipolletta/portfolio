@@ -8,7 +8,8 @@
   "home": {
     "role": "Full Stack Developer",
     "hello": "Ciao, sono",
-    "bio": "Mi appassiona scrivere codice chiaro e costruire progetti utili e ben fatti. Lavoro soprattutto con Angular e Spring, e mi piace affrontare ogni sfida come un’occasione per crescere."
+    "intro": "💻 Costruisco soluzioni digitali funzionali e pensate per durare.",
+    "bio": "Mi appassiona trasformare idee complesse in codice semplice e ben strutturato. Specializzato in Angular e Spring, creo applicazioni che fanno davvero la differenza. Ogni sfida è per me un’opportunità di crescita — personale e professionale."
   },
   "404": {
     "text": "La pagina che stai cercando non esiste",
